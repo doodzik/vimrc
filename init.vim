@@ -115,8 +115,8 @@ set backspace=indent,eol,start
 "
 " Command Line Completion
 "
-set wildmode=list:longest   " make cmdline tab completion similar to bash
-set wildmenu                " enable ctrl-n and ctrl-p to scroll thru matches
+set wildmode=list:longest,list:full " make cmdline tab completion similar to bash
+set wildmenu                        " enable ctrl-n and ctrl-p to scroll thru matches
 " stuff to ignore when tab completing
 set wildignore+=*.a,*.obj,*.o
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
@@ -140,35 +140,10 @@ set nofoldenable
 """"""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""
-" Disable arrow keys & hjkl
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-" noremap h <NOP>
-" noremap j <NOP>
-" noremap k <NOP>
-" noremap l <NOP>
-imap <esc> <NOP>
-
-" use ZZ instead, fewer keystrokes
-cnoreabbrev wq <NOP>
-cnoreabbrev x  <NOP>
-
-" block visual mode
-nmap v     <NOP>
-nmap V     <NOP>
-nmap <c-v> <NOP>
 
 " TODO considering this
 " nnoremap ' `
 " nnoremap ` '
-
-" Move around splits with <c-hjkl>
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
 
 " Recover from accidental Ctrl-U/W
 inoremap <c-u> <c-g>u<c-u>
@@ -182,28 +157,9 @@ inoremap <c-d> <c-c> u
 " This unsets the 'last search pattern' register by hitting return
 nnoremap <silent> <CR> :noh<CR><CR>
 
-" open vimrc in split view
-nnoremap <leader>r <C-w><C-v><C-l>:e $MYVIMRC<cr>
-
-" remove all end white spaces and write
-nnoremap <leader>w  mz :%s/\s\+$//e<cr> :noh<cr> :w<cr> `z
-
-" compress multiple lines to one
-nnoremap <leader>J :%s/^\_s\+\n/\r <cr> :noh<cr>
-
-" open new tab and open file
-nnoremap <leader>t :tabnew <cr>
-
-" quickly fix spelling error
-nnoremap <leader>z 1z=
-
 " stop enteritg ex mode
 " and map it to quit window
 nnoremap <silent> Q :q <cr>
-
-" open splits
-nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <leader>s <C-w>s<C-w>j
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
@@ -216,11 +172,37 @@ nmap <silent> - <Plug>nextvalDec
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
-map <leader>n :call RenameFile()<cr>
+"TODO try this
+cmap w!! w !sudo tee % >/dev/null
+
+nmap <s-l> :tabn<cr>  
+nmap <s-h> :tabp<cr> 
+
+""""""""""""""""""""""""""""""""""""
+" Mappings leader
+""""""""""""""""""""""""""""""""""""
 
 nnoremap <leader>f :call SelectaFile(".")<cr>
 
-"
+" open splits
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
+
+" open vimrc in split view
+nnoremap <leader>r <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" open new tab and open file
+nnoremap <leader>t :tabnew <cr>
+nnoremap <Leader>c :tabc<cr>
+
+" remove all end white spaces and write
+nnoremap <leader>w  mz :%s/\s\+$//e<cr> :noh<cr> :w<cr> `z
+
+map <leader>n :call RenameFile()<cr>
+
+" quickly fix spelling error
+nnoremap <leader>z 1z=
+
 """""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """""""""""""""""""""""""""""""""""""""
