@@ -17,7 +17,7 @@ call pathogen#infect('bundle/{}')
 " Syntax
 "
 syntax off
-set t_Co=256
+set t_Co=0
 filetype plugin indent on
 set showmatch " move the cursor to the previous matching bracket for half a second, and quickly pressing a key will effectively cancel this animation
 set lazyredraw " redraw only when we need to.
