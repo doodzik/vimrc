@@ -1,59 +1,38 @@
-"""""""""""""""""""""""""""""""
-" Init
-"""""""""""""""""""""""""""""""
-" Use Vim not Vi settings, has to be set at the beginning because of side effects
 set nocompatible
 
 set shell=/bin/zsh
 set guifont=Menlo:h14
 set encoding=utf-8
 scriptencoding utf-8
-let g:indentLine_char = '｜'
-
-autocmd!
-call pathogen#infect('bundle/{}')
-
+" let g:indentLine_char = '｜'
 " Normally, Vim messes with iskeyword when you open a shell file. This can
 " leak out, polluting other file types even after a 'set ft=' change. This
 " variable prevents the iskeyword change so it can't hurt anyone.
 let g:sh_noisk=1
 
-" Prevent Vim from clobbering the scrollback buffer. See
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
-
-set ttyfast
-set timeoutlen=300 " mapping delay
-set ttimeoutlen=0  " key code delay
-
-set autoread " If a file is changed outside of vim, automatically reload it without asking
-
-set vb t_vb= " disable bell
-
-set clipboard=unnamed " use clipboard as the default register
-
-" changing the leader
-" let mapleader = "\<Space>"
-nmap <SPACE> <leader>
-nmap <BS> <leader>
-nmap <Del> <leader>
-
-" remove js checker because it doesn't support es6 and es7 syntax
-" let g:syntastic_javascript_checkers = ['']
-
-set lazyredraw " redraw only when we need to.
-""""""""""""""""""""""""""""""""""""
-" Basic Config
-""""""""""""""""""""""""""""""""""""
+autocmd!
+call pathogen#infect('bundle/{}')
 
 "
 " Syntax
 "
 syntax off
 set t_Co=256
-set background=dark
 filetype plugin indent on
 set showmatch " move the cursor to the previous matching bracket for half a second, and quickly pressing a key will effectively cancel this animation
+set lazyredraw " redraw only when we need to.
+
+"
+" Display
+"
+set vb t_vb= " disable bell
+
+" 
+" Keyboard
+"
+set ttyfast
+set timeoutlen=300 " mapping delay
+set ttimeoutlen=0  " key code delay
 
 "
 " Indention
@@ -75,8 +54,6 @@ set gdefault             " make g the default subsitution flag
 "
 " Lining
 "
-" set number
-" set relativenumber
 set cursorline
 set scrolloff=9999     " vertical/horizontal scroll off settings to be in the middle
 set sidescrolloff=7
@@ -96,6 +73,7 @@ set noswapfile    " because I am writing on all changes it is disabled
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set autoread " If a file is changed outside of vim, automatically reload it without asking
 
 "
 " Status & Cmd's
@@ -129,6 +107,9 @@ set omnifunc=syntaxcomplete#Complete
 " Buffer
 "
 set switchbuf=useopen
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
 
 "
 " Folding
@@ -137,102 +118,7 @@ set switchbuf=useopen
 set foldmethod=manual
 set nofoldenable
 
-""""""""""""""""""""""""""""""""""""
-" Mappings
-""""""""""""""""""""""""""""""""""""
-
-" TODO considering this
-" nnoremap ' `
-" nnoremap ` '
-
-" Recover from accidental Ctrl-U/W
-inoremap <c-u> <c-g>u<c-u>
-inoremap <c-w> <c-g>u<c-w>
-
-" prevent esc from going back
-inoremap <c-c> <c-c>`^
-
-inoremap <c-d> <c-c> u
-
-" This unsets the 'last search pattern' register by hitting return
-nnoremap <silent> <CR> :noh<CR><CR>
-
-" stop enteritg ex mode
-" and map it to quit window
-nnoremap <silent> Q :q <cr>
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" nextval bindings
-nmap <silent> + <Plug>nextvalInc
-nmap <silent> - <Plug>nextvalDec
-
-" Indent if we're at the beginning of a line. Else, do completion.
-inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
-
-"TODO try this
-cmap w!! w !sudo tee % >/dev/null
-
-nmap <s-l> :tabn<cr>  
-nmap <s-h> :tabp<cr> 
-
-""""""""""""""""""""""""""""""""""""
-" Mappings leader
-""""""""""""""""""""""""""""""""""""
-
-nnoremap <leader>f :call SelectaFile(".")<cr>
-
-" open splits
-nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <leader>s <C-w>s<C-w>j
-
-" open vimrc in split view
-nnoremap <leader>r <C-w><C-v><C-l>:e $MYVIMRC<cr>
-
-" open new tab and open file
-nnoremap <leader>t :tabnew <cr>
-nnoremap <Leader>c :tabc<cr>
-
-" remove all end white spaces and write
-nnoremap <leader>w  mz :%s/\s\+$//e<cr> :noh<cr> :w<cr> `z
-
-map <leader>n :call RenameFile()<cr>
-
-" quickly fix spelling error
-nnoremap <leader>z 1z=
-
-"""""""""""""""""""""""""""""""""""""""
-" CUSTOM AUTOCMDS
-"""""""""""""""""""""""""""""""""""""""
-
-augroup vimrcEx
-  " Clear all autocmds in the group
-  autocmd!
-
-  " CursorLineOnlyInActiveWindow
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-
-  " reload vimrc if written
-  autocmd bufwritepost .vimrc source $MYVIMRC
-
-  " autosaves buffer if changed occured
-  autocmd InsertLeave,TextChanged * if expand('%') != '' | update | endif
-
-  autocmd FileType text setlocal textwidth=78
-  " Jump to last cursor position unless it's invalid or in an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Leave the return key alone when in command line windows, since it's used
-  " to run commands there.
-  autocmd! CmdwinEnter * :unmap <cr>
-  autocmd! CmdwinLeave * :call MapCR()
-
-  autocmd FileType c,cpp,java,php,ruby,python,javascript,javascript.jsx autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-augroup END
-
+"
+" Register
+"
+set clipboard=unnamed " use clipboard as the default register
