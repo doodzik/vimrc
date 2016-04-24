@@ -16,6 +16,3 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule "bundle/lexima.vim"]
-	path = bundle/lexima.vim
-	url = https://github.com/cohama/lexima.vim
