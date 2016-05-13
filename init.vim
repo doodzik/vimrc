@@ -87,7 +87,7 @@ set cmdheight=1  " Avoiding the 'Hit ENTER to continue' prompts
 " Altered Format Behaviour of Cmd
 "
 set nojoinspaces
-set formatoptions-=o                        " dont continue comments when pushing o/O
+" set formatoptions-=t 
 set backspace=indent,eol,start
 
 "
