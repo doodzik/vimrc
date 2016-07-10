@@ -27,7 +27,7 @@ set lazyredraw " redraw only when we need to.
 "
 set vb t_vb= " disable bell
 
-" 
+"
 " Keyboard
 "
 set ttyfast
@@ -87,7 +87,6 @@ set cmdheight=1  " Avoiding the 'Hit ENTER to continue' prompts
 " Altered Format Behaviour of Cmd
 "
 set nojoinspaces
-" set formatoptions-=t 
 set backspace=indent,eol,start
 
 "
