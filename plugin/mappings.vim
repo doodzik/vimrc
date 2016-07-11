@@ -7,7 +7,7 @@ inoremap <c-c> <c-c>`^
 inoremap <c-d> <c-c> u
 
 " This unsets the 'last search pattern' register by hitting return
-nnoremap <silent> <CR> :noh<CR><CR>
+nnoremap <silent> <CR> :noh<CR>
 
 " stop enteritg ex mode
 " and map it to quit window
