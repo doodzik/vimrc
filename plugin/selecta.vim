@@ -23,7 +23,7 @@ function! SelectaFile(path)
   " TODO ignore paths with .gitignore file
   " TODO check if locate is faster
 
-  call SelectaCommand("find_with_gitignore" . a:path . "/*", "", ":e")
+  call SelectaCommand("find_with_gitignore " . a:path . "/*", "", ":e")
 endfunction
 
 nnoremap <leader>f :call SelectaFile(".")<cr>
