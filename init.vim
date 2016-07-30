@@ -10,6 +10,8 @@ scriptencoding utf-8
 " variable prevents the iskeyword change so it can't hurt anyone.
 let g:sh_noisk=1
 
+let g:syntastic_html_tidy_exec = 'tidy5'
+
 autocmd!
 call pathogen#infect('bundle/{}')
 
