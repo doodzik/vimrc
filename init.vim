@@ -19,6 +19,10 @@ call pathogen#infect('bundle/{}')
 " Syntax
 "
 syntax off
+" uses vim-active-numbers = only linenumbers in active window
+set number
+set relativenumber
+hi LineNr term=NONE " dont underline Linenumber
 set t_Co=0
 filetype plugin indent on
 set showmatch " move the cursor to the previous matching bracket for half a second, and quickly pressing a key will effectively cancel this animation

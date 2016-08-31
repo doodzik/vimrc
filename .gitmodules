@@ -19,3 +19,6 @@
 [submodule "bundle/typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "plugin/vim-active-numbers"]
+	path = plugin/vim-active-numbers
+	url = git://github.com/AssailantLF/vim-active-numbers.git
