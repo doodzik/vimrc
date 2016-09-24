@@ -57,6 +57,11 @@ set hlsearch             " hilight searches by default
 set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
 set gdefault             " make g the default subsitution flag
 
+" Dont let commandT change search dir automatically
+" for rootignore
+let g:CommandTTraverseSCM = 'pwd'
+let g:RootIgnoreUseHome = 0
+
 "
 " Lining
 "

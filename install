@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+cd bundle/YouCompleteMe
+brew install CMake
+. ninit
+./install.py --tern-completer
+npm install -g typescript
+cd .. 
+
+cd Command-T/ruby/command-t
+ruby extconf.rb
+make
+cd ..
+
+# this is for vim-tags
+brew install ctags

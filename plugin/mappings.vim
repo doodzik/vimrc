@@ -46,8 +46,7 @@ nnoremap <leader>s <C-w>s<C-w>j
 " open vimrc in split view
 nnoremap <leader>r <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
-" open new tab and open file
-nnoremap <leader>t :tabnew <cr>
+" close tab
 nnoremap <Leader>c :tabc<cr>
 
 " quickly fix spelling error

@@ -19,6 +19,24 @@
 [submodule "bundle/typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "plugin/vim-active-numbers"]
+[submodule "bundle/vim-active-numbers"]
 	path = plugin/vim-active-numbers
 	url = git://github.com/AssailantLF/vim-active-numbers.git
+[submodule "bundle/RootIgnore"]
+	path = bundle/RootIgnore
+	url = https://github.com/octref/RootIgnore
+[submodule "bundle/MatchTagAlways"]
+	path = bundle/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways
+[submodule "bundle/Command-T"]
+	path = bundle/Command-T
+	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/vim-tags"]
+	path = bundle/vim-tags
+	url = https://github.com/szw/vim-tags
+[submodule "bundle/vim-test"]
+	path = bundle/vim-test
+	url = https://github.com/janko-m/vim-test
