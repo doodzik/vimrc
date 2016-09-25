@@ -51,3 +51,12 @@ nnoremap <Leader>c :tabc<cr>
 
 " quickly fix spelling error
 nnoremap <leader>z 1z=
+
+nmap <silent> <leader>f :CommandT<CR>
+
+" testing
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
