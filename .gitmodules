@@ -37,3 +37,6 @@
 [submodule "bundle/vim-test"]
 	path = bundle/vim-test
 	url = https://github.com/janko-m/vim-test
+[submodule "bundle/vim-active-numbers"]
+	path = bundle/vim-active-numbers
+	url = https://github.com/AssailantLF/vim-active-numbers
