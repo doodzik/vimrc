@@ -20,6 +20,11 @@ call pathogen#infect('bundle/{}')
 "
 syntax off
 " uses vim-active-numbers = only linenumbers in active window
+" sometimes tex files aren't recognized as such
+" http://superuser.com/questions/208177/vim-and-tex-filetypes-plaintex-vs-tex
+" turns of numbering on filetype
+let g:actnum_exclude =
+      \ [ 'tex', 'plaintex' ]
 set number
 set relativenumber
 hi LineNr term=NONE " dont underline Linenumber
