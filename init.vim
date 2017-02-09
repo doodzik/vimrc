@@ -28,10 +28,16 @@ let g:actnum_exclude =
 set number
 set relativenumber
 hi LineNr term=NONE " dont underline Linenumber
-set t_Co=0
+" remove colors
+" set t_Co=256
 filetype plugin indent on
 set showmatch " move the cursor to the previous matching bracket for half a second, and quickly pressing a key will effectively cancel this animation
 set lazyredraw " redraw only when we need to.
+
+highlight LineNr ctermfg=White
+highlight CursorLineNr ctermfg=White
+highlight NonText ctermfg=White
+
 
 "
 " Display
@@ -117,6 +123,7 @@ set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
 set complete+=k             " add dictionary scanning
 set omnifunc=syntaxcomplete#Complete
+set completeopt+=longest,menuone,preview
 
 "
 " Buffer
@@ -137,3 +144,4 @@ set nofoldenable
 " Register
 "
 set clipboard=unnamed " use clipboard as the default register
+
