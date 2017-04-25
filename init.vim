@@ -38,6 +38,9 @@ highlight LineNr ctermfg=White
 highlight CursorLineNr ctermfg=White
 highlight NonText ctermfg=White
 
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
 
 "
 " Display
