@@ -10,8 +10,6 @@ scriptencoding utf-8
 " variable prevents the iskeyword change so it can't hurt anyone.
 let g:sh_noisk=1
 
-let g:syntastic_html_tidy_exec = 'tidy5'
-
 autocmd!
 call pathogen#infect('bundle/{}')
 
@@ -107,6 +105,24 @@ set showcmd      " show incomplete cmds down the bottom
 set showmode     " show current mode down the bottom
 set laststatus=2 " always display status bar
 set cmdheight=1  " Avoiding the 'Hit ENTER to continue' prompts
+
+set statusline+=%f
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"
+" sytastic
+"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 "
 " Altered Format Behaviour of Cmd
