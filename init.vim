@@ -120,6 +120,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_text_checkers = ['proselint']
+let g:syntastic_markdown_checkers = ['proselint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 let g:syntastic_html_tidy_exec = 'tidy5'
