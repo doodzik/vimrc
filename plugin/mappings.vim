@@ -27,36 +27,40 @@ nmap ga <Plug>(EasyAlign)
 nmap <silent> + <Plug>nextvalInc
 nmap <silent> - <Plug>nextvalDec
 
-
 " """"""
 " LEADER
 " """"""
 
 " changing the leader
-" let mapleader = "\<Space>"
 nmap <SPACE> <leader>
-" the following 2 mappings are here because I use an ergoDox keyboard
+" The following 2 mappings are here because I use an ergoDox keyboard
 nmap <BS> <leader>
 nmap <Del> <leader>
 
-" open splits
+" Open splits
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
 
-" open vimrc in split view
+" Open vimrc in split view
 nnoremap <leader>r <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
-" close tab
+" Close tab
 nnoremap <Leader>c :tabc<cr>
 
-" quickly fix spelling error
+" Quickly fix spelling error
 nnoremap <leader>z 1z=
 
+" Open CommandT
 nmap <silent> <leader>f :CommandT<CR>
 
-" testing
+" Run Linter 
+nmap <silent> <leader>l :SyntasticCheck<CR>
+
+" 
+
+" Testing
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>L :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
