@@ -169,3 +169,10 @@ set nofoldenable
 "
 set clipboard=unnamed " use clipboard as the default register
 
+"
+" Movement
+"
+" move down a row (rendered) instead of an actual line
+nmap j gj
+nmap k gk
+
