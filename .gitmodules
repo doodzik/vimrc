@@ -1,9 +1,6 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "bundle/vim-easy-align"]
 	path = bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
@@ -37,3 +34,12 @@
 [submodule "bundle/vim-active-numbers"]
 	path = bundle/vim-active-numbers
 	url = https://github.com/AssailantLF/vim-active-numbers
+[submodule "bundle/undotree"]
+	path = bundle/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "bundle/vim-sneak"]
+	path = bundle/vim-sneak
+	url = https://github.com/justinmk/vim-sneak
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale

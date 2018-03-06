@@ -68,6 +68,7 @@ set incsearch            " find the next match as we type the search
 set hlsearch             " hilight searches by default
 set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
 set gdefault             " make g the default subsitution flag
+let g:sneak#label = 1    " sneak.vim highlight results
 
 " Dont let commandT change search dir automatically
 " for rootignore
@@ -112,22 +113,21 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 "
-" sytastic
+" ale lint
 "
 
-let g:syntastic_mode_map = { 'mode': 'passive' }
+" Put this in vimrc or a plugin file of your own.
+" After this is configured, :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Enable completion where available.
+let g:ale_completion_enabled = 1
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_text_checkers = ['proselint']
-let g:syntastic_markdown_checkers = ['proselint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-
-let g:syntastic_html_tidy_exec = 'tidy5'
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
 
 "
 " Altered Format Behaviour of Cmd
