@@ -22,9 +22,6 @@
 [submodule "bundle/MatchTagAlways"]
 	path = bundle/MatchTagAlways
 	url = https://github.com/Valloric/MatchTagAlways
-[submodule "bundle/Command-T"]
-	path = bundle/Command-T
-	url = https://github.com/wincent/Command-T.git
 [submodule "bundle/vim-tags"]
 	path = bundle/vim-tags
 	url = https://github.com/szw/vim-tags
@@ -43,3 +40,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

@@ -70,6 +70,9 @@ set ignorecase smartcase " make searches case-sensitive only if they contain upp
 set gdefault             " make g the default subsitution flag
 let g:sneak#label = 1    " sneak.vim highlight results
 
+" add fzf
+set rtp+=/usr/local/opt/fzf
+
 " Dont let commandT change search dir automatically
 " for rootignore
 let g:CommandTTraverseSCM = 'pwd'
@@ -109,7 +112,6 @@ set cmdheight=1  " Avoiding the 'Hit ENTER to continue' prompts
 
 set statusline+=%f
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 "

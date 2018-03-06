@@ -50,8 +50,8 @@ nnoremap <Leader>c :tabc<cr>
 " Quickly fix spelling error
 nnoremap <leader>z 1z=
 
-" Open CommandT
-nmap <silent> <leader>f :CommandT<CR>
+" Open FZF
+nmap <silent> <leader>f :GFiles<CR>
 
 " Undotree
 nnoremap <leader>u :UndotreeToggle<CR>

@@ -1,9 +1,5 @@
 #! /usr/bin/env bash
 
-cd ./bundle/Command-T/ruby/command-t
-sudo ruby extconf.rb
-make
-cd -
-
 # this is for vim-tags
 brew install ctags
+
