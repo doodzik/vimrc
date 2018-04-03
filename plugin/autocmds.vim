@@ -24,3 +24,4 @@ augroup vimrcEx
   " Auto-clean fugitive buffers
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
+
