@@ -20,4 +20,7 @@ augroup vimrcEx
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+  
+  " Auto-clean fugitive buffers
+  autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END

@@ -27,6 +27,9 @@ nmap ga <Plug>(EasyAlign)
 nmap <silent> + <Plug>nextvalInc
 nmap <silent> - <Plug>nextvalDec
 
+" fugitive
+nmap <silent>  gst :Gstatus <cr>
+
 " """"""
 " LEADER
 " """"""
