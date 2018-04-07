@@ -72,6 +72,8 @@ let g:sneak#label = 1    " sneak.vim highlight results
 
 " add fzf
 set rtp+=/usr/local/opt/fzf
+" add note
+set rtp+=/usr/local/opt/note
 
 " Dont let commandT change search dir automatically
 " for rootignore
