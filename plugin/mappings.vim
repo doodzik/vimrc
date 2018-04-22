@@ -10,8 +10,12 @@ inoremap <c-d> <c-c> u
 nnoremap <silent> <CR> :noh<CR>
 
 " stop enteritg ex mode
-" and map it to quit window
-nnoremap <silent> Q :q <cr>
+" and easier replaying of macro
+nnoremap Q @q
+
+" instead of Q use ZZ to exit
+" nnoremap <silent> Q :q <cr>
+
 
 " write as sudo
 cmap w!! w !sudo tee % >/dev/null
