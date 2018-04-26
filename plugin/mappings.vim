@@ -9,16 +9,19 @@ inoremap <c-d> <c-c> u
 " This unsets the 'last search pattern' register by hitting return
 nnoremap <silent> <CR> :noh<CR>
 
+" easier replaying of macro
+nnoremap @ @q
+
 " stop enteritg ex mode
-" and easier replaying of macro
-nnoremap Q @q
-
-" instead of Q use ZZ to exit
-" nnoremap <silent> Q :q <cr>
-
+nnoremap <silent> Q :q <cr>
 
 " write as sudo
 cmap w!! w !sudo tee % >/dev/null
+
+" tcsh style editing keys for command mode
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
 
 " """""""
 " Plugins
