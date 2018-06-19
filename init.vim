@@ -97,7 +97,8 @@ set history=10000
 set modeline      " Modelines (comments that set vim options on a per-file basis)
 set modelines=3
 set nobackup      " Don't make backups at all
-set noundofile    " lets you undo from before file was opend
+set undofile      " lets you undo from before file was opend
+set undodir=~/.vim/undodir
 set noswapfile    " because I am writing on all changes it is disabled
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
