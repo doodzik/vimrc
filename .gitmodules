@@ -13,27 +13,18 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule "bundle/typescript-vim"]
-	path = bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "bundle/RootIgnore"]
 	path = bundle/RootIgnore
 	url = https://github.com/octref/RootIgnore
 [submodule "bundle/MatchTagAlways"]
 	path = bundle/MatchTagAlways
 	url = https://github.com/Valloric/MatchTagAlways
-[submodule "bundle/vim-tags"]
-	path = bundle/vim-tags
-	url = https://github.com/szw/vim-tags
 [submodule "bundle/vim-test"]
 	path = bundle/vim-test
 	url = https://github.com/janko-m/vim-test
 [submodule "bundle/vim-active-numbers"]
 	path = bundle/vim-active-numbers
 	url = https://github.com/AssailantLF/vim-active-numbers
-[submodule "bundle/undotree"]
-	path = bundle/undotree
-	url = https://github.com/mbbill/undotree
 [submodule "bundle/vim-sneak"]
 	path = bundle/vim-sneak
 	url = https://github.com/justinmk/vim-sneak

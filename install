@@ -1,6 +1,4 @@
 #! /usr/bin/env bash
 
-# this is for vim-tags
-brew install ctags
 mkdir undodir
 
